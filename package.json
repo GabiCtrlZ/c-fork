@@ -29,7 +29,8 @@
     ]
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "repository": "https://github.com/GabiCtrlZ/c-fork",
   "keywords": [
