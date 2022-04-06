@@ -1,0 +1,38 @@
+{
+  "name": "@gabictrlz/cfork",
+  "version": "1.1.0",
+  "author": "Gabriel Balko",
+  "description": "C++ fork module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "dependencies": {
+    "node-gyp": "^9.0.0"
+  },
+  "scripts": {
+    "test": "node test/testmodule.js"
+  },
+  "license": "ISC",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": "https://github.com/GabiCtrlZ/c-fork",
+  "keywords": [
+    "addon"
+  ]
+}
