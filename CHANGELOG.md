@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.0...v1.0.1) (2022-04-06)
+
+
+### Bug Fixes
+
+* **initial:** changed package access ([5e0c2bc](https://github.com/GabiCtrlZ/c-fork/commit/5e0c2bc8459a76a75652f8c56697a9a20d9a869d))
+
 # 1.0.0 (2022-04-06)
 
 
