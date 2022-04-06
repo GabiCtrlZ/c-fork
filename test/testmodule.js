@@ -1,4 +1,4 @@
-const cfork = require('../index.js');
+const { cfork } = require('../index.js');
 
 console.log('should print this once');
 

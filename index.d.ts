@@ -1,3 +1,5 @@
-export default interface Cfork {
+export interface Cfork {
   fork(): number
 }
+
+export const cfork: Cfork

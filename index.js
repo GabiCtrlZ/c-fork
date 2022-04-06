@@ -1,3 +1,3 @@
-const cfork = require('./build/Release/cfork');  
+const cfork = require('./build/Release/cfork');
 
-module.exports = cfork;
+module.exports = { cfork };

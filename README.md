@@ -13,7 +13,7 @@ npm i @gabictrlz/c-fork
 ### createLinkToken
 
 ```javascript
-import cfork from '@gabictrlz/c-fork'
+import { cfork } from '@gabictrlz/c-fork'
 
 console.log('should print this once'); // you'll get this log only once
 
