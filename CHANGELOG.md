@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.1...v1.0.2) (2022-04-06)
+
+
+### Bug Fixes
+
+* **initial:** added the ability to track child process and kill him ([a859f58](https://github.com/GabiCtrlZ/c-fork/commit/a859f58646a1e9b18410f718084d7d8beea30f21))
+* **initial:** added the ability to track child process and kill him ([2582e3c](https://github.com/GabiCtrlZ/c-fork/commit/2582e3c080fbc52645b9f4e4c56fb867fde85f6c))
+
 ## [1.0.1](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.0...v1.0.1) (2022-04-06)
 
 
