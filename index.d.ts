@@ -1,8 +1,8 @@
 export interface Cfork {
   fork(): number,
-  isRunning(pid: number): boolean,
+  isRunning(pid: number): number,
   kill(pid: number): void,
-  exit(): void,
+  exit(number): void,
 }
 
 export const cfork: Cfork
