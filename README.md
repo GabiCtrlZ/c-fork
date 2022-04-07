@@ -75,9 +75,7 @@ if (pid === 0) {
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
 
-type Code = 0 | 1
-
-cfork.exit(code as Code) // exits with supplied code
+cfork.exit() // kills the current process
 
 ```
 

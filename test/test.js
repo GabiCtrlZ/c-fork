@@ -12,7 +12,7 @@ const main = async () => {
       counter++
     }
     console.log('child exiting')
-    cfork.exit(1) // optional
+    cfork.exit()
   }
   else {
     console.log('parent:', pid)
@@ -21,7 +21,7 @@ const main = async () => {
     while (isRunning === 0) {
       isRunning = cfork.isRunning(pid)
       console.log(`isRunning: ${isRunning}`)
-      if (retries > 5) {
+      if (retries > 10) {
         console.log('taking too long, killing:', pid)
         cfork.kill(pid)
       }

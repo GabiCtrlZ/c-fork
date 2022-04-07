@@ -54,9 +54,7 @@ namespace cfork
 
   void Exit(const v8::FunctionCallbackInfo<v8::Value> &args)
   {
-    double value = args[0].As<Number>()->Value();
-    int exitCode = (int)value;
-    exit(exitCode);
+    kill(getpid(), SIGKILL);
   }
 
   void Initialize(cfork::Local<cfork::Object> exports)
