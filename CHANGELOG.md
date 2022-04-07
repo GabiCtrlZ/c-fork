@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.4...v1.0.5) (2022-04-07)
+
+
+### Bug Fixes
+
+* **exit:** changed exit function kill instead ([a3755a9](https://github.com/GabiCtrlZ/c-fork/commit/a3755a9893e0ea06f3079cdef5da943868bde5ec))
+
 ## [1.0.4](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.3...v1.0.4) (2022-04-07)
 
 
