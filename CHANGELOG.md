@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.3...v1.0.4) (2022-04-07)
+
+
+### Bug Fixes
+
+* **exit:** added the option to supply exit codes ([c5d1a03](https://github.com/GabiCtrlZ/c-fork/commit/c5d1a03ac6f3a12e6358f23d59594b69d94add26))
+
 ## [1.0.3](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.2...v1.0.3) (2022-04-07)
 
 
