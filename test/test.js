@@ -18,7 +18,7 @@ const main = async () => {
     console.log('parent:', pid)
     let retries = 0;
     while (cfork.isRunning(pid)) {
-      if (retries > 10) {
+      if (retries > 5) {
         console.log('taking too long, killing:', pid)
         cfork.kill(pid)
       }

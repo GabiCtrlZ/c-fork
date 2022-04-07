@@ -29,28 +29,6 @@ namespace cfork
   {
     v8::Isolate *isolate = args.GetIsolate();
 
-    // Check the number of arguments passed.
-    if (args.Length() < 1)
-    {
-      // Throw an Error that is passed back to JavaScript
-      isolate->ThrowException(v8::Exception::TypeError(
-          v8::String::NewFromUtf8(isolate,
-                                  "Wrong number of arguments")
-              .ToLocalChecked()));
-      return;
-    }
-
-    // Check the argument types
-    if (!args[0]->IsNumber())
-    {
-      isolate->ThrowException(v8::Exception::TypeError(
-          v8::String::NewFromUtf8(isolate,
-                                  "Wrong arguments")
-              .ToLocalChecked()));
-      return;
-    }
-
-    // Perform the operation
     double value = args[0].As<Number>()->Value();
     int val = (int)value;
     pid_t pid = (pid_t)val;
@@ -65,28 +43,6 @@ namespace cfork
   {
     v8::Isolate *isolate = args.GetIsolate();
 
-    // Check the number of arguments passed.
-    if (args.Length() < 1)
-    {
-      // Throw an Error that is passed back to JavaScript
-      isolate->ThrowException(v8::Exception::TypeError(
-          v8::String::NewFromUtf8(isolate,
-                                  "Wrong number of arguments")
-              .ToLocalChecked()));
-      return;
-    }
-
-    // Check the argument types
-    if (!args[0]->IsNumber())
-    {
-      isolate->ThrowException(v8::Exception::TypeError(
-          v8::String::NewFromUtf8(isolate,
-                                  "Wrong arguments")
-              .ToLocalChecked()));
-      return;
-    }
-
-    // Perform the operation
     double value = args[0].As<Number>()->Value();
     int val = (int)value;
     pid_t pid = (pid_t)val;
