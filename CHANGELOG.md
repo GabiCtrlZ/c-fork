@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.2...v1.0.3) (2022-04-07)
+
+
+### Bug Fixes
+
+* **refactor:** moved args validation to node for clearer errors ([1f0a6c7](https://github.com/GabiCtrlZ/c-fork/commit/1f0a6c7468c47ec758f2fb22b56b0dd55337b82e))
+
 ## [1.0.2](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.1...v1.0.2) (2022-04-06)
 
 
