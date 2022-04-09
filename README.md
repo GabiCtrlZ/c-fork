@@ -106,7 +106,7 @@ cfork.exit(0) // kills the current process with exit code 0 or 1
 
 * `pid` {number} The pid of the child process
 * `timeout` {number} The timeout in milliseconds
-* Returns: {Promise<number>} Returns a promise that resolves to the exit code of the child process
+* Returns: {Promise< number >} Returns a promise that resolves to the exit code of the child process
 
 This function returns a promise that resolves when the child process has settled.
 In case the child process has thrown an error, the promise will reject with the error.
