@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/GabiCtrlZ/c-fork/compare/v2.0.0...v2.0.1) (2022-04-09)
+
+
+### Bug Fixes
+
+* allow all version of node after 14 to compile ([551733a](https://github.com/GabiCtrlZ/c-fork/commit/551733a22d07fc3e2ab44cedebd67eb646559207))
+
 # [2.0.0](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.5...v2.0.0) (2022-04-09)
 
 
