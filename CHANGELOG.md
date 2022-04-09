@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.5...v2.0.0) (2022-04-09)
+
+
+### Features
+
+* **02:** added waitForChildToSettle fn and ability to recieve child exit signal code ([70a059e](https://github.com/GabiCtrlZ/c-fork/commit/70a059e008e59b1310a9ef6e7520acb4cae82fa6))
+
+
+### BREAKING CHANGES
+
+* **02:** added waitForChildToSettle fn and ability to recieve child exit signal code
+
 ## [1.0.5](https://github.com/GabiCtrlZ/c-fork/compare/v1.0.4...v1.0.5) (2022-04-07)
 
 
