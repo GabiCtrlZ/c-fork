@@ -2,18 +2,10 @@ import { cfork } from '../cfork'
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => { setTimeout(resolve, ms) })
 
-const main = async () => {
-  const pid = cfork.fork()
-
-  if (pid === 0) {
-    console.log('child is running')
-    await sleep(5_000)
-    console.log('child exiting')
-    cfork.exit(0)
-  } else {
-    await cfork.waitForChildToSettle(pid, 10_000)
-    console.log('child exited successfully')
-  }
-}
+const main = () => cfork.runFunctionInChild(async () => {
+  console.log('child is running')
+  await sleep(5_000)
+  console.log('child exiting')
+}, 10_000)
 
 main()

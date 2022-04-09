@@ -25,7 +25,7 @@ npm i @gabictrlz/c-fork
 
 ### `cfork.fork()`
 
-* Returns: {number} Returns the child_process pid to the parent and 0 to the child
+* Returns: { number } Returns the child_process pid to the parent and 0 to the child
 
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
@@ -45,8 +45,8 @@ Since the child got no child, it will get 0 as pid, while the parent process wil
 
 ### `cfork.isRunning(pid)`
 
-* `pid` {number} The pid of the child process
-* Returns: {number} 0 if the child process is running, otherwise returns the terminating signal number
+* `pid` { number } The pid of the child process
+* Returns: { number } 0 if the child process is running, otherwise returns the terminating signal number
 
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
@@ -67,8 +67,8 @@ if (pid === 0) {
 
 ### `cfork.kill(pid)`
 
-* `pid` {number} The pid to kill
-* Returns: {void}
+* `pid` { number } The pid to kill
+* Returns: { void }
 
 
 ```javascript
@@ -89,8 +89,8 @@ if (pid === 0) {
 
 ### `cfork.exit(code)`
 
-* `code` {number} The exit code, either 0 or 1
-* Returns: {void}
+* `code` { number } The exit code, either 0 or 1
+* Returns: { void }
 
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
@@ -104,9 +104,9 @@ cfork.exit(0) // kills the current process with exit code 0 or 1
 
 ### `cfork.waitForChildToSettle(pid, timeout)`
 
-* `pid` {number} The pid of the child process
-* `timeout` {number} The timeout in milliseconds
-* Returns: {Promise< number >} Returns a promise that resolves to the exit code of the child process
+* `pid` { number } The pid of the child process
+* `timeout` { number } The timeout in milliseconds
+* Returns: { Promise< number > } Returns a promise that resolves to the exit code of the child process
 
 This function returns a promise that resolves when the child process has settled.
 In case the child process has thrown an error, the promise will reject with the error.
@@ -123,6 +123,30 @@ else {
   await cfork.waitForChildToSettle(pid, 10_000) // wait for child
   console.log('child exited successfully')
 }
+```
+
+### run function in child
+
+### `cfork.runFunctionInChild(fn, timeout)`
+
+* `fn` { T extends () => void } The pid of the child process
+* `timeout` { number } The timeout in milliseconds
+* Returns: { Promise< void > } Returns a promise that resolves if all was successful, throws an error if child failed or timeout reached
+
+This function allows you to run a specific function in the child process, allowing you the ability to terminate this function midway.
+The `runFunctionInChild` wraps all of the annoying boilerplate for you and provides a clean API.
+
+This is the main core of `c-fork`, as of before, if you fired a promise you had no way to stop it in the middle, it'll run until it settles
+
+```javascript
+import { cfork } from '@gabictrlz/c-fork'
+
+const pid = cfork.fork()
+cfork.runFunctionInChild(async () => {
+  // all of your logic goes here, all the async, sync, everything
+}, timeout)
+
+```
 
 
 ***Pull requests are welcome!***

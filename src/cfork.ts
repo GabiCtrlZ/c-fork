@@ -21,7 +21,7 @@ const kill = (pid: number): number => {
   return unixFork.kill(pid)
 }
 
-const exit = (code: 0 | 1): number => {
+const exit = (code: number): number => {
   if (!isRunningOnLinux()) throw new Error(NOT_SUPPORTED_ERROR)
   if (code !== 1 && code !== 0) throw new Error(INVALID_CODE_ERROR)
 
@@ -62,10 +62,30 @@ const waitForChildToSettle = (pid: number, timeout: number): Promise<number> => 
   })
 }
 
+const runFunctionInChild = async <T extends () => void>(fn: T, timeout: number): Promise<void> => {
+  const pid = fork()
+
+  if (pid === 0) {
+    let exitCode = 0
+
+    try {
+      await fn()
+    } catch (error) {
+      exitCode = 1
+      throw error
+    } finally {
+      exit(exitCode)
+    }
+  } else {
+    await waitForChildToSettle(pid, timeout)
+  }
+}
+
 export const cfork = {
   fork,
   kill,
   exit,
   isRunning,
   waitForChildToSettle,
+  runFunctionInChild,
 }
