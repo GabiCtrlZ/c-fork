@@ -1,0 +1,6 @@
+.github
+.husky
+.dependabot
+.gitignore
+.eslintrc
+CHANGELOG.md

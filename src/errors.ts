@@ -1,0 +1,5 @@
+export const NOT_SUPPORTED_ERROR = 'cfork is not supported on this platform'
+export const INVALID_PID_ERROR = 'pid must be a valid process id'
+export const INVALID_CODE_ERROR = 'code must be 1 or 0'
+export const TIMEOUT_ERROR = 'child process did not finish in time'
+export const CHILD_THROWN_ERROR = 'child process threw an error'

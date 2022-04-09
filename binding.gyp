@@ -2,7 +2,7 @@
   "targets": [
     {
       "target_name": "cfork",
-      "sources": [ "src/cfork.cc" ]
+      "sources": [ "addon/cfork.cc" ]
     }
   ]
 }

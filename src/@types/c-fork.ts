@@ -5,5 +5,3 @@ export interface Cfork {
   exit(code: number): void,
   waitForChildToSettle(pid: number, timeout: number): Promise<number>,
 }
-
-export const cfork: Cfork

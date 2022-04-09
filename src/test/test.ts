@@ -1,17 +1,16 @@
-const { cfork } = require('../index.js')
+import { cfork } from '../cfork'
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+const sleep = (ms: number): Promise<void> => new Promise((resolve) => { setTimeout(resolve, ms) })
 
 const main = async () => {
-
   const pid = cfork.fork()
+
   if (pid === 0) {
     console.log('child is running')
     await sleep(5_000)
     console.log('child exiting')
     cfork.exit(0)
-  }
-  else {
+  } else {
     await cfork.waitForChildToSettle(pid, 10_000)
     console.log('child exited successfully')
   }
