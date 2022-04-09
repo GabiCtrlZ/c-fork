@@ -25,6 +25,10 @@ jobs:
           scope: '@gabictrlz' 
       - name: Install compile dependencies
         run: npm i
+      - name: Install typescript
+        run: npm i -g typescript
+      - name: Compile library
+        run: npm run build
       - name: Install dependencies
         run: npm uninstall && npm ci --ignore-scripts --production
       - name: Release
