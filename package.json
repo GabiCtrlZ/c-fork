@@ -1,6 +1,6 @@
 {
   "name": "@gabictrlz/c-fork",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "Gabriel Balko",
   "description": "C++ fork module",
   "main": "dist/index.js",

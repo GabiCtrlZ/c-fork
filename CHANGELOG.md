@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/GabiCtrlZ/c-fork/compare/v2.1.1...v2.1.2) (2022-04-09)
+
+
+### Bug Fixes
+
+* fixed typo in import name ([61541a7](https://github.com/GabiCtrlZ/c-fork/commit/61541a7e488e9b85f16981174d65a739423aae67))
+
 ## [2.1.1](https://github.com/GabiCtrlZ/c-fork/compare/v2.1.0...v2.1.1) (2022-04-09)
 
 
