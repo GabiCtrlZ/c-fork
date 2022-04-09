@@ -23,6 +23,10 @@ npm i @gabictrlz/c-fork
 
 ### Create a fork
 
+### `cfork.fork()`
+
+* Returns: {number} Returns the child_process pid to the parent and 0 to the child
+
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
 
@@ -38,6 +42,11 @@ The PID returned by fork() is the pid of the child process.
 Since the child got no child, it will get 0 as pid, while the parent process will get the pid of the child process.
 
 ### Check if child is running
+
+### `cfork.isRunning(pid)`
+
+* `pid` {number} The pid of the child process
+* Returns: {number} 0 if the child process is running, otherwise returns the terminating signal number
 
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
@@ -56,6 +65,12 @@ if (pid === 0) {
 
 ### Kill child
 
+### `cfork.kill(pid)`
+
+* `pid` {number} The pid to kill
+* Returns: {void}
+
+
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
 
@@ -72,12 +87,42 @@ if (pid === 0) {
 
 ### exit process
 
+### `cfork.exit(code)`
+
+* `code` {number} The exit code, either 0 or 1
+* Returns: {void}
+
 ```javascript
 import { cfork } from '@gabictrlz/c-fork'
 
-cfork.exit() // kills the current process
+cfork.exit(0) // kills the current process with exit code 0 or 1
 
 ```
+
+
+### wait for child to settle
+
+### `cfork.waitForChildToSettle(pid, timeout)`
+
+* `pid` {number} The pid of the child process
+* `timeout` {number} The timeout in milliseconds
+* Returns: {Promise<number>} Returns a promise that resolves to the exit code of the child process
+
+This function returns a promise that resolves when the child process has settled.
+In case the child process has thrown an error, the promise will reject with the error.
+The promise will also reject in case of timeout.
+
+```javascript
+import { cfork } from '@gabictrlz/c-fork'
+
+const pid = cfork.fork()
+if (pid === 0) {
+  // ... do something
+}
+else {
+  await cfork.waitForChildToSettle(pid, 10_000) // wait for child
+  console.log('child exited successfully')
+}
 
 
 ***Pull requests are welcome!***

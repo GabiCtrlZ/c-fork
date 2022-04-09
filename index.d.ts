@@ -2,7 +2,8 @@ export interface Cfork {
   fork(): number,
   isRunning(pid: number): number,
   kill(pid: number): void,
-  exit(): void,
+  exit(code: number): void,
+  waitForChildToSettle(pid: number, timeout: number): Promise<number>,
 }
 
 export const cfork: Cfork

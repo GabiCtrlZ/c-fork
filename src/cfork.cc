@@ -29,23 +29,25 @@ namespace cfork
   {
     v8::Isolate *isolate = args.GetIsolate();
 
-    double value = args[0].As<Number>()->Value();
-    int val = (int)value;
-    pid_t pid = (pid_t)val;
+    int value = (int)args[0].As<Number>()->Value();
+    pid_t pid = (pid_t)value;
 
     int status;
     pid_t result = waitpid(pid, &status, WNOHANG);
-    auto resultVal = v8::Number::New(isolate, result);
-    args.GetReturnValue().Set(resultVal);
+    args.GetReturnValue().Set(v8::Number::New(isolate, result));
+    if (WIFSIGNALED(status) && result != 0)
+    {
+      int signum = WTERMSIG(status);
+      args.GetReturnValue().Set(v8::Number::New(isolate, signum));
+    }
   }
 
-    void Kill(const v8::FunctionCallbackInfo<v8::Value> &args)
+  void Kill(const v8::FunctionCallbackInfo<v8::Value> &args)
   {
     v8::Isolate *isolate = args.GetIsolate();
 
-    double value = args[0].As<Number>()->Value();
-    int val = (int)value;
-    pid_t pid = (pid_t)val;
+    int value = (int)args[0].As<Number>()->Value();
+    pid_t pid = (pid_t)value;
 
     int result = kill(pid, SIGKILL);
     auto resultVal = v8::Number::New(isolate, result);
@@ -54,7 +56,15 @@ namespace cfork
 
   void Exit(const v8::FunctionCallbackInfo<v8::Value> &args)
   {
-    kill(getpid(), SIGKILL);
+    int value = (int)args[0].As<Number>()->Value();
+    if (value == 0)
+    {
+      kill(getpid(), SIGTERM);
+    }
+    else
+    {
+      kill(getpid(), SIGKILL);
+    }
   }
 
   void Initialize(cfork::Local<cfork::Object> exports)
