@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/GabiCtrlZ/c-fork/compare/v2.1.0...v2.1.1) (2022-04-09)
+
+
+### Bug Fixes
+
+* added lib compile to workflow ([7ee5f65](https://github.com/GabiCtrlZ/c-fork/commit/7ee5f657b3690e8128076cf78d069deba287333f))
+
 # [2.1.0](https://github.com/GabiCtrlZ/c-fork/compare/v2.0.1...v2.1.0) (2022-04-09)
 
 
