@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/GabiCtrlZ/c-fork/compare/v2.0.1...v2.1.0) (2022-04-09)
+
+
+### Features
+
+* converted entire code base to typescript ([acd1a72](https://github.com/GabiCtrlZ/c-fork/commit/acd1a72af96896c6d92ad0fc8a53b498654f15c7))
+
 ## [2.0.1](https://github.com/GabiCtrlZ/c-fork/compare/v2.0.0...v2.0.1) (2022-04-09)
 
 
